@@ -11,6 +11,6 @@ namespace SeleniumSharp.Tests.Controls
     {
         private String id;
 
-        public TextBox(String id) : base(id) { }
+        public TextBox(String id, SelectorType selectorType) : base(id, selectorType) { }
     }
 }

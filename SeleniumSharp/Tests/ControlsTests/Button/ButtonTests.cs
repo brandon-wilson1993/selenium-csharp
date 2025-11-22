@@ -1,12 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using SeleniumSharp.Tests.Base;
-using Sulfur.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Sulfur.Controls;
 
 namespace SeleniumSharp.Tests.ControlsTests.Button
 {
@@ -32,7 +27,8 @@ namespace SeleniumSharp.Tests.ControlsTests.Button
         [Test]
         public void ClickMeButton()
         {
-            driver.FindElement(By.CssSelector(".btn.btn-primary")).Click();
+            Controls.Button clickMeButton = new Controls.Button(".btn.btn-primary", SelectorType.CssSelector);
+            clickMeButton.Click();
 
             Assert.That(driver.FindElement(By.Id("welcomeDiv")).Text, Is.EqualTo("You have done a dynamic click"));
         }

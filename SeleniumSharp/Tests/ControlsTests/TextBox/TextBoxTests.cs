@@ -3,8 +3,9 @@ using OpenQA.Selenium;
 using SeleniumSharp.Tests.Base;
 using SeleniumSharp.Tests.Controls;
 using Sulfur.Assertions;
+using Sulfur.Controls;
 
-namespace SeleniumSharp.Tests.ControlsTests.TextBoxTests
+namespace SeleniumSharp.Tests.ControlsTests.TextBox
 {
     [TestFixture]
     public class TextBoxTests :  BaseTest
@@ -30,10 +31,10 @@ namespace SeleniumSharp.Tests.ControlsTests.TextBoxTests
         public void FullnameCorrectlyDisplayed()
         {
             // with wrapper
-            TextBox textBox = new TextBox("fullname");
+            Controls.TextBox textBox = new Controls.TextBox("fullname", SelectorType.Id);
             textBox.TypeToId("Test").TypeToId(Keys.Tab);
 
-            //// old code
+            // selenium based code code
             //driver.FindElement(By.Id("fullname")).SendKeys("Test");
             //driver.FindElement(By.Id("fullname")).SendKeys(Keys.Tab);
 

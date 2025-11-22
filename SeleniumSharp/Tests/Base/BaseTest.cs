@@ -26,7 +26,7 @@ namespace SeleniumSharp.Tests.Base
             // go to base page, can also rely on the navigation within the tests instead of wasting time 
             // going back to the same page each time
             driver = Driver.GetInstance();
-            driver.Navigate().GoToUrl("https://www.tutorialspoint.com/selenium/practice/text-box.php");
+            // driver.Navigate().GoToUrl("https://www.tutorialspoint.com/selenium/practice/text-box.php");
         }
 
         [TearDown]
