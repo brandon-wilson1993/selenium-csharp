@@ -44,7 +44,7 @@ namespace Sulfur.Controls
 
         public IWebElement GetWebElement()
         {
-            return Driver.Driver.GetInstance().FindElement(By.Id(locatorIdentifier));
+            return FindElement();
         }
 
         private IWebElement FindElement()
