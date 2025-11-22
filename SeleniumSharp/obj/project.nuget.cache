@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "L4jJKsj3hwE=",
+  "dgSpecHash": "bL6t5BsOH2g=",
   "success": true,
   "projectFilePath": "/home/wbd/Documents/Projects/SeleniumSharp/SeleniumSharp/SeleniumSharp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/wbd/.nuget/packages/microsoft.codecoverage/18.0.1/microsoft.codecoverage.18.0.1.nupkg.sha512",
+    "/home/wbd/.nuget/packages/microsoft.net.test.sdk/18.0.1/microsoft.net.test.sdk.18.0.1.nupkg.sha512",
+    "/home/wbd/.nuget/packages/microsoft.testplatform.objectmodel/18.0.1/microsoft.testplatform.objectmodel.18.0.1.nupkg.sha512",
+    "/home/wbd/.nuget/packages/microsoft.testplatform.testhost/18.0.1/microsoft.testplatform.testhost.18.0.1.nupkg.sha512",
+    "/home/wbd/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/home/wbd/.nuget/packages/nunit/4.4.0/nunit.4.4.0.nupkg.sha512",
+    "/home/wbd/.nuget/packages/selenium.support/4.38.0/selenium.support.4.38.0.nupkg.sha512",
+    "/home/wbd/.nuget/packages/selenium.webdriver/4.38.0/selenium.webdriver.4.38.0.nupkg.sha512",
+    "/home/wbd/.nuget/packages/system.collections.immutable/8.0.0/system.collections.immutable.8.0.0.nupkg.sha512",
+    "/home/wbd/.nuget/packages/system.reflection.metadata/8.0.0/system.reflection.metadata.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
