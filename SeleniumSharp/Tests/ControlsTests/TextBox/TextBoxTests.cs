@@ -1,6 +1,9 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using SeleniumSharp.Tests.Base;
+using SeleniumSharp.Tests.Controls;
+using Sulfur.Assertions;
+using Sulfur.Controls;
 
 namespace SeleniumSharp.Tests.ControlsTests.TextBox
 {
@@ -20,17 +23,26 @@ namespace SeleniumSharp.Tests.ControlsTests.TextBox
             Using a "golden" datasource is another route to take, but I have tried both and prefer 
             data creation and deletionwithin the test class.
             */
-            
+            TestContext.WriteLine("setup for textbox");
             driver.Navigate().GoToUrl("https://www.tutorialspoint.com/selenium/practice/text-box.php");   
         }
 
         [Test]
         public void FullnameCorrectlyDisplayed()
         {
-            driver.FindElement(By.Id("fullname")).SendKeys("Test");
-            driver.FindElement(By.Id("fullname")).SendKeys(Keys.Tab);
-            
-            Assert.That(driver.FindElement(By.Id("fullname")).GetDomProperty("value"), Is.EqualTo("Test"));
+            // with wrapper
+            Controls.TextBox textBox = new Controls.TextBox("fullname", SelectorType.Id);
+            textBox.TypeToId("Test").TypeToId(Keys.Tab);
+
+            // selenium based code code
+            //driver.FindElement(By.Id("fullname")).SendKeys("Test");
+            //driver.FindElement(By.Id("fullname")).SendKeys(Keys.Tab);
+
+            // with wrapper
+            AssertionsById.AssertIsEqualTo(textBox, "value", "Test");
+
+            // old code
+            //Assert.That(driver.FindElement(By.Id("fullname")).GetDomProperty("value"), Is.EqualTo("Tes"));
         }
     }   
 }
