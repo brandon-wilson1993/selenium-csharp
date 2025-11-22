@@ -1,26 +1,142 @@
 {
   "format": 1,
   "restore": {
-    "/home/wbd/Documents/Projects/SeleniumSharp/SeleniumSharp/SeleniumSharp.csproj": {}
+    "C:\\Users\\brawi\\Documents\\Projects\\selenium-csharp\\SeleniumSharp\\SeleniumSharp.csproj": {}
   },
   "projects": {
-    "/home/wbd/Documents/Projects/SeleniumSharp/SeleniumSharp/SeleniumSharp.csproj": {
+    "C:\\Users\\brawi\\Documents\\Projects\\selenium-csharp\\SeleniumSharp\\SeleniumSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/wbd/Documents/Projects/SeleniumSharp/SeleniumSharp/SeleniumSharp.csproj",
+        "projectUniqueName": "C:\\Users\\brawi\\Documents\\Projects\\selenium-csharp\\SeleniumSharp\\SeleniumSharp.csproj",
         "projectName": "SeleniumSharp",
-        "projectPath": "/home/wbd/Documents/Projects/SeleniumSharp/SeleniumSharp/SeleniumSharp.csproj",
-        "packagesPath": "/home/wbd/.nuget/packages/",
-        "outputPath": "/home/wbd/Documents/Projects/SeleniumSharp/SeleniumSharp/obj/",
+        "projectPath": "C:\\Users\\brawi\\Documents\\Projects\\selenium-csharp\\SeleniumSharp\\SeleniumSharp.csproj",
+        "packagesPath": "C:\\Users\\brawi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\brawi\\Documents\\Projects\\selenium-csharp\\SeleniumSharp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/wbd/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\brawi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\brawi\\Documents\\Projects\\selenium-csharp\\Sulfur\\Sulfur.csproj": {
+                "projectPath": "C:\\Users\\brawi\\Documents\\Projects\\selenium-csharp\\Sulfur\\Sulfur.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[18.0.1, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Selenium.Support": {
+              "target": "Package",
+              "version": "[4.38.0, )"
+            },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[4.38.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.11, 9.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[9.0.11, 9.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[9.0.11, 9.0.11]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[9.0.11, 9.0.11]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\brawi\\Documents\\Projects\\selenium-csharp\\Sulfur\\Sulfur.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\brawi\\Documents\\Projects\\selenium-csharp\\Sulfur\\Sulfur.csproj",
+        "projectName": "Sulfur",
+        "projectPath": "C:\\Users\\brawi\\Documents\\Projects\\selenium-csharp\\Sulfur\\Sulfur.csproj",
+        "packagesPath": "C:\\Users\\brawi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\brawi\\Documents\\Projects\\selenium-csharp\\Sulfur\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\brawi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,16 +155,12 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "Microsoft.NET.Test.Sdk": {
-              "target": "Package",
-              "version": "[18.0.1, )"
-            },
             "NUnit": {
               "target": "Package",
               "version": "[4.4.0, )"
@@ -73,12 +185,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.11, 9.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[9.0.11, 9.0.11]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[9.0.11, 9.0.11]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.111/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

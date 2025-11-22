@@ -1,18 +1,19 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using Sulfur.Driver;
 
 namespace SeleniumSharp.Tests.Base
 {
     public class BaseTest
     {
+
         protected IWebDriver driver;
 
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
             TestContext.WriteLine("OneTimeSetup BaseTest");
-            driver = new ChromeDriver();
             
             // login and save login state here to reuse across all tests
         }
@@ -21,9 +22,10 @@ namespace SeleniumSharp.Tests.Base
         public void Setup()
         {
             TestContext.WriteLine("Setup BaseTest");
-            
+
             // go to base page, can also rely on the navigation within the tests instead of wasting time 
             // going back to the same page each time
+            driver = Driver.GetInstance();
             driver.Navigate().GoToUrl("https://www.tutorialspoint.com/selenium/practice/text-box.php");
         }
 
@@ -38,7 +40,7 @@ namespace SeleniumSharp.Tests.Base
         public void OneTimeTearDown()
         {
             TestContext.WriteLine("OneTimeTearDown BaseTest");
-            driver.Quit();
+            Driver.Quit();
         }
     }   
 }
