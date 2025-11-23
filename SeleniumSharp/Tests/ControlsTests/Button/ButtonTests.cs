@@ -24,7 +24,7 @@ namespace SeleniumSharp.Tests.ControlsTests.Button
             data creation and deletion within the test class.
             */
 
-            driver.Navigate().GoToUrl("https://www.tutorialspoint.com/selenium/practice/buttons.php");
+            NavigateTo("buttons.php");
             buttonPage = new ButtonPage();
         }
 
@@ -33,7 +33,7 @@ namespace SeleniumSharp.Tests.ControlsTests.Button
         {
             buttonPage.clickMeButton.Click();
 
-            Assert.That(driver.FindElement(By.Id("welcomeDiv")).Text, Is.EqualTo("You have done a dynamic click"));
+            Assert.That(buttonPage.clickMeButton.GetWebElement().Text, Is.EqualTo("You have done a dynamic click"));
         }
     }   
 }

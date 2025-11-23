@@ -33,7 +33,10 @@ namespace Sulfur.Driver
 
         public static IWebDriver GetInstance()
         {
-            if (driver == null) driver = new Driver();
+            if (driver == null)
+            {
+                driver = new Driver();
+            }
 
             return driver.webDriver;
         }

@@ -22,9 +22,9 @@ public class TextBoxTests : BaseTest
         Using a "golden" datasource is another route to take, but I have tried both and prefer
         data creation and deletionwithin the test class.
         */
-        TestContext.WriteLine("setup for textbox");
         textBoxPage = new TextBoxPage();
-        driver.Navigate().GoToUrl("https://www.tutorialspoint.com/selenium/practice/text-box.php");
+        
+        NavigateTo("text-box.php");
     }
 
     [Test]
