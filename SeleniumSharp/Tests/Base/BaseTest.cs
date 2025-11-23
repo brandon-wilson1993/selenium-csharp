@@ -1,23 +1,21 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using Sulfur.Driver;
 
 namespace SeleniumSharp.Tests.Base
 {
     public class BaseTest
     {
-
         protected IWebDriver driver;
 
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
             TestContext.WriteLine("OneTimeSetup BaseTest");
-            
+
             // login and save login state here to reuse across all tests
         }
-        
+
         [SetUp]
         public void Setup()
         {
