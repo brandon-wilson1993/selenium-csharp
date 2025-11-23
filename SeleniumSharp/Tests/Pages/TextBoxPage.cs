@@ -20,12 +20,12 @@ namespace SeleniumSharp.Tests.Pages
             submit = new Button(".btn.btn-primary", SelectorType.CssSelector);
         }
 
-        public void FillOutPage(String name, String email, String address, String password)
+        public void FillOutPage(string name, string email, string address, string password)
         {
-            fullName.TypeToId("Testing");
-            this.email.TypeToId("Testing@gmail.com");
-            this.address.TypeToId("123 Testing Avenue");
-            this.password.TypeToId("Password123");
+            fullName.Type(name);
+            this.email.Type(email);
+            this.address.Type(address);
+            this.password.Type(password);
         }
     }   
 }

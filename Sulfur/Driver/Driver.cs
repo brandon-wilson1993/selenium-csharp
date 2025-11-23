@@ -1,25 +1,13 @@
-﻿using NUnit.Framework;
+﻿using System.Diagnostics;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Edge;
-using System.Diagnostics;
 
 namespace Sulfur.Driver
 {
     public sealed class Driver
     {
-        private IWebDriver webDriver;
-        private static Driver driver = new Driver();
-
-        public static IWebDriver GetInstance()
-        {
-            if(driver == null)
-            {
-                driver = new Driver();
-            }
-
-            return driver.webDriver;
-        }
+        private static Driver driver = new();
+        private readonly IWebDriver webDriver;
 
         private Driver()
         {
@@ -27,7 +15,15 @@ namespace Sulfur.Driver
 
             // this should be easier to change within the test project
             ChromeOptions options = new ChromeOptions();
-            options.AddArgument("--headless=new");
+
+            String noheadless = Environment.GetEnvironmentVariable("NO_HEADLESS");
+
+            // run headless is env var is not set, default to headless
+            if (noheadless == null || noheadless.ToLower() == "false")
+            {
+                options.AddArgument("--headless=new");
+            }
+
             options.AddArgument("--disable-gpu");
             options.AddArgument("--window-size=1920,1080");
             options.AddArgument("--no-sandbox");
@@ -35,10 +31,17 @@ namespace Sulfur.Driver
             webDriver = new ChromeDriver(options);
         }
 
+        public static IWebDriver GetInstance()
+        {
+            if (driver == null) driver = new Driver();
+
+            return driver.webDriver;
+        }
+
         public static void Quit()
         {
             driver.webDriver.Quit();
             driver = null;
         }
-    }
+    }   
 }
