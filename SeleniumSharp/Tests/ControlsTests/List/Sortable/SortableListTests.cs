@@ -3,7 +3,7 @@ using SeleniumSharp.Tests.Base;
 using SeleniumSharp.Tests.Controls.List.Sortable;
 using SeleniumSharp.Tests.Pages;
 
-namespace SeleniumSharp.Tests.ControlsTests.List
+namespace SeleniumSharp.Tests.ControlsTests.List.Sortable
 {
     [TestFixture]
     public class SortableListTests : BaseTest
@@ -20,9 +20,9 @@ namespace SeleniumSharp.Tests.ControlsTests.List
         [Test]
         public void VerifyListOrder()
         {
-            List<String> stuff = sortableListPage.sortableList.GetHeaders();
-            
-            
+            //List<string> stuff = sortableListPage.sortableList.GetListItemValue("Jacob", "First Name");
+            sortableListPage.sortableList.GetListItemValue("Jacob", "First Name");
+
         }
     }   
 }

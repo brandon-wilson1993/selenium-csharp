@@ -33,7 +33,7 @@ namespace SeleniumSharp.Tests.ControlsTests.Button
         {
             buttonPage.clickMeButton.Click();
 
-            Assert.That(buttonPage.clickMeButton.GetWebElement().Text, Is.EqualTo("You have done a dynamic click"));
+            Assert.That(buttonPage.popUpText.GetWebElement().Text, Is.EqualTo("You have done a dynamic click"));
         }
     }   
 }
