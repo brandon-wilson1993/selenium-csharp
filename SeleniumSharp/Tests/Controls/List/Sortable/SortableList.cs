@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using Sulfur.Controls;
+using Sulfur.Driver;
 
 namespace SeleniumSharp.Tests.Controls.List.Sortable
 {
@@ -18,18 +19,16 @@ namespace SeleniumSharp.Tests.Controls.List.Sortable
             headers = GetHeaders();
         }
 
-        public String GetListItemValue(String findByValue, String findByColumn)
+        public String GetListItemValue(String findByValue, String findByColumn, String columnValueToVerify)
         {
-            int headerIndex = GetHeaderIndex(findByColumn);
+            int findHeaderIdx = GetHeaderIndex(findByColumn);
+            int verifyHeaderIdx = GetHeaderIndex(columnValueToVerify);
 
-            List<IWebElement> listOfElements = parentElement.GetWebElement().FindElements(By.CssSelector($" table tbody tr:nth-child({headerIndex + 1})")).ToList();
+            List<IWebElement> listOfElements = parentElement.GetWebElement().FindElements(By.CssSelector($" table tbody tr")).ToList();
 
-            for (int idx = 0; idx < listOfElements.Count; idx++)
-            {
-                TestContext.WriteLine($"header {idx}: {listOfElements[idx].Text}");
-            }
-
-            return "";
+            IWebElement item = listOfElements.Find(element => element.FindElement(By.CssSelector($" td:nth-child({findHeaderIdx + 1})")).Text == findByValue);
+            
+            return item.FindElement(By.CssSelector($" td:nth-child({verifyHeaderIdx + 1})")).Text;
         }
 
         public List<String> GetHeaders()
@@ -52,6 +51,7 @@ namespace SeleniumSharp.Tests.Controls.List.Sortable
 
             for (int idx = 0; idx < headers.Count; idx++)
             {
+                // Console.WriteLine($"Header in GetHeaderIndex is {headers[idx]}");
                 if (headers[idx].Equals(headerName))
                 {
                     index = idx;

@@ -18,11 +18,11 @@ namespace SeleniumSharp.Tests.ControlsTests.List.Sortable
         }
 
         [Test]
-        public void VerifyListOrder()
+        public void VerifyLastNameAppearsCorrectly()
         {
-            //List<string> stuff = sortableListPage.sortableList.GetListItemValue("Jacob", "First Name");
-            sortableListPage.sortableList.GetListItemValue("Mark", "First Name");
-
+            String username = sortableListPage.sortableList.GetListItemValue("2", "#", "Username");
+            
+            Assert.That(username, Is.EqualTo("@fat"));
         }
     }   
 }
