@@ -8,11 +8,13 @@ namespace SeleniumSharp.Tests.Controls.List.Sortable
     public class SortableList
     {
         private BaseControl parentElement;
+        private String parentIdentifier;
         private List<String> headers;
         
         public SortableList(String locationIdentifier, SelectorType selectorType)
         {
             parentElement = new BaseControl(locationIdentifier, selectorType);
+            parentIdentifier = locationIdentifier;
             headers = GetHeaders();
         }
 
@@ -20,7 +22,7 @@ namespace SeleniumSharp.Tests.Controls.List.Sortable
         {
             int headerIndex = GetHeaderIndex(findByColumn);
 
-            List<IWebElement> listOfElements = parentElement.GetWebElement().FindElements(By.CssSelector($"table tbody:nth-child({headerIndex + 1})")).ToList();
+            List<IWebElement> listOfElements = parentElement.GetWebElement().FindElements(By.CssSelector($" table tbody tr:nth-child({headerIndex + 1})")).ToList();
 
             for (int idx = 0; idx < listOfElements.Count; idx++)
             {
@@ -32,15 +34,16 @@ namespace SeleniumSharp.Tests.Controls.List.Sortable
 
         public List<String> GetHeaders()
         {
-            List<IWebElement> headerElements = parentElement.GetWebElement().FindElements(By.CssSelector("table thead th")).ToList();
+            List<String> list = new List<string>();
+            ReadOnlyCollection<IWebElement> headerElements = parentElement.GetWebElement().FindElements(By.CssSelector(" table thead th"));
 
             for (int idx = 0; idx < headerElements.Count; idx++)
             {
-                headers.Add(headerElements[idx].Text);
-                TestContext.WriteLine($"header {idx}: {headerElements[idx].Text}");
+                list.Add(headerElements[idx].Text);
+                // TestContext.WriteLine($"header {idx}: {headerElements[idx].Text}");
             }
             
-            return headers;
+            return list;
         }
 
         private int GetHeaderIndex(String headerName)
