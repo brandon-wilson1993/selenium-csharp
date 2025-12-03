@@ -6,7 +6,7 @@ namespace SeleniumSharp.Tests.Base
 {
     public class BaseTest
     {
-        protected IWebDriver driver;
+        private IWebDriver driver;
 
         [OneTimeSetUp]
         public void OneTimeSetUp()
@@ -25,6 +25,11 @@ namespace SeleniumSharp.Tests.Base
             // going back to the same page each time
             driver = Driver.GetInstance();
             // driver.Navigate().GoToUrl("https://www.tutorialspoint.com/selenium/practice/text-box.php");
+        }
+
+        protected void NavigateTo(String pageName)
+        {
+            driver.Navigate().GoToUrl($"https://www.tutorialspoint.com/selenium/practice/{pageName}");
         }
 
         [TearDown]
